@@ -54,7 +54,7 @@ namespace WSDLTest
             {
                 yield return new TestCaseData(Country.Canada, new DateTime(1700, 1, 1), new DateTime(2100, 1, 1));
                 yield return new TestCaseData(Country.Canada, new DateTime(2018, 1, 1), new DateTime(2017, 1, 1));
-                yield return new TestCaseData(null, new DateTime(2016, 1, 1), new DateTime(2017, 1, 1));
+                yield return new TestCaseData(null, new DateTime(2100, 1, 1), new DateTime(2101, 1, 1));
             }
         }
 
