@@ -12,7 +12,7 @@ namespace WSDLTest
 {
     [Parallelizable(ParallelScope.All)]
     [TestFixture]
-    public class WsdlTests
+    public class WsdlTests : IDisposable
     {
         public HolidayService2Soap Client;
 
@@ -85,7 +85,7 @@ namespace WSDLTest
         /// <param name="exceptionMessage"></param>
         [TestCase(Country.Canada, "", 2017, "holiday code provided was invalid"), Timeout(TestTimeout)]
         [TestCase(Country.Canada, "FLAG-DAY", 1699, "The year provided was invalid")]
-        [TestCase(null, "FLAG-DAY", 2017, "The year provided was invalid")]
+        [TestCase(null, "FLAG-DAY", 2017, "The year provided was invalid")]        
         public void GetHolidayDateE(Country country, string holidayCode, int year, string exceptionMessage)
         {
             try
@@ -183,6 +183,11 @@ namespace WSDLTest
             var file = File.CreateText(filepath);
             file.WriteLine(TestData);
             file.Close();
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
 
